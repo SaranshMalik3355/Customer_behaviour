@@ -1,135 +1,77 @@
 # 🛍️ Customer Shopping Behavior Analysis
 
-## 📌 Project Overview
-This project analyzes customer shopping behavior using transactional data from **3,900 purchases** across multiple product categories.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-Data%20Analysis-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/SQL-PostgreSQL-informational?style=for-the-badge&logo=postgresql">
+  <img src="https://img.shields.io/badge/PowerBI-Dashboard-yellow?style=for-the-badge&logo=powerbi">
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge">
+</p>
 
-The goal is to uncover insights into:
-- Customer spending patterns  
-- Product preferences  
-- Subscription behavior  
-- Customer segmentation  
-
-These insights help businesses make **data-driven decisions**.
-
----
-
-## 📊 Dataset Summary
-- **Total Records:** 3,900  
-- **Total Features:** 18  
-
-### Key Features:
-- **Demographics:** Age, Gender, Location, Subscription Status  
-- **Purchase Details:** Item Purchased, Category, Amount, Season, Size, Color  
-- **Behavioral Data:** Discounts, Promo Usage, Frequency, Ratings, Shipping Type  
-
-### Data Issues:
-- 37 missing values in **Review Rating** column (handled using median imputation)
+<p align="center">
+  <b>Turning raw transactional data into actionable business insights 🚀</b>
+</p>
 
 ---
 
-## 🧹 Data Preparation (Python)
+## 📌 Overview
 
-- Loaded dataset using `pandas`
-- Performed initial exploration using:
-  - `df.info()`
-  - `df.describe()`
-- Handled missing values using **category-wise median**
-- Renamed columns to **snake_case**
-- Feature Engineering:
-  - `age_group`
-  - `purchase_frequency_days`
-- Removed redundant column: `promo_code_used`
-- Loaded cleaned data into **PostgreSQL**
+This project analyzes **3,900+ customer transactions** to uncover patterns in:
+
+- 🧑‍🤝‍🧑 Customer behavior  
+- 💰 Spending habits  
+- 🛍️ Product preferences  
+- 🔁 Subscription & loyalty trends  
+
+The project combines **Python (EDA) + SQL (analysis) + Power BI (visualization)** to deliver **end-to-end analytics**.
 
 ---
 
-## 🗄️ SQL Analysis
+## 🎯 Business Problem
 
-### Key Business Questions Solved:
+Businesses often struggle to answer:
 
-- Revenue comparison by gender  
-- High-spending customers using discounts  
-- Top 5 products by rating  
-- Shipping type comparison  
-- Subscribers vs non-subscribers  
-- Discount-dependent products  
-- Customer segmentation  
-- Top 3 products per category  
-- Repeat buyers & subscription behavior  
-- Revenue by age group  
+- Who are the most valuable customers?
+- Do discounts actually increase revenue?
+- Which products and categories drive growth?
+- Are subscriptions really worth it?
+
+👉 This project answers all of the above using data.
 
 ---
 
-## 👥 Customer Segmentation
+## 📊 Dataset Highlights
 
-Customers were divided into:
-- **New Customers**
-- **Returning Customers**
-- **Loyal Customers**
+| Metric | Value |
+|------|------|
+| Total Records | 3,900 |
+| Features | 18 |
+| Avg Purchase | $59.76 |
+| Avg Rating | 3.75 |
 
-> Majority of customers fall into the **Loyal segment (~80%)**
-
----
-
-## 📊 Power BI Dashboard
-
-An interactive dashboard was built to visualize insights.
-
-### Dashboard Features:
-- KPI Cards:
-  - Total Customers  
-  - Average Purchase Amount  
-  - Average Review Rating  
-
-- Filters:
-  - Gender  
-  - Category  
-  - Subscription Status  
-  - Shipping Type  
-
-- Visualizations:
-  - Revenue by Category  
-  - Sales by Category  
-  - Revenue by Age Group  
-  - Sales by Age Group  
+### Data Includes:
+- **Demographics:** Age, Gender, Location  
+- **Transactions:** Items, Category, Amount  
+- **Behavior:** Discounts, Frequency, Ratings, Shipping  
 
 ---
 
-## 💡 Key Insights
+## ⚙️ Tech Stack
 
-- Male customers generated **~2x revenue** compared to female customers  
-- **839 customers** spent above average even with discounts  
-- **Young Adults** contribute the highest revenue  
-- Express shipping users spend slightly more than standard  
-- Subscription does not significantly affect average spending  
-
----
-
-## 🚀 Business Recommendations
-
-- **Increase Subscriptions**
-  - Offer exclusive benefits and incentives  
-
-- **Loyalty Programs**
-  - Reward repeat buyers  
-
-- **Optimize Discounts**
-  - Maintain balance between sales and profit margins  
-
-- **Targeted Marketing**
-  - Focus on high-revenue segments  
-
-- **Product Strategy**
-  - Promote top-rated and high-selling products  
+| Layer | Tools |
+|------|------|
+| Data Processing | Python (Pandas, NumPy) |
+| Data Storage | PostgreSQL |
+| Analysis | SQL |
+| Visualization | Power BI |
 
 ---
 
-## 🛠️ Tech Stack
+## 🧹 Data Pipeline
 
-- **Python** (Pandas, Data Cleaning, EDA)  
-- **PostgreSQL** (SQL Analysis)  
-- **Power BI** (Dashboard & Visualization)  
-
----
-
-## 📂 Project Structure
+```mermaid
+graph LR
+A[Raw Data] --> B[Python Cleaning]
+B --> C[Feature Engineering]
+C --> D[PostgreSQL]
+D --> E[SQL Analysis]
+E --> F[Power BI Dashboard]
